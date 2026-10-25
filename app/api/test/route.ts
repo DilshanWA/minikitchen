@@ -2,9 +2,9 @@
 import { NextResponse } from "next/server";
 
 export async function GET() {
-  const apiKey = process.env.GEMINI_GAMMA_API_KEY;
+  const apiKey = process.env.OPENROUTER_API_KEY;
   const baseURL =
-    process.env.GEMINI_GAMMA_API_BASE_URL ??
+    process.env.OPENROUTER_API_BASE_URL ??
     "https://openrouter.ai/api/v1";
 
   if (!apiKey) {
