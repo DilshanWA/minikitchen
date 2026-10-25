@@ -6,24 +6,23 @@ import Chatbot from "./components/Chatbot";
 
 export const instant = false;
 
-const menuItems = [
-  { name: "Charred halloumi", description: "Whipped feta, citrus, smoked honey", price: "$14", tag: "to share" },
-  { name: "Miso glazed salmon", description: "Coconut rice, pickled cucumber, herbs", price: "$28", tag: "house favourite" },
-  { name: "Crispy eggplant", description: "Tahini, pomegranate, mint, toasted sesame", price: "$18", tag: "plant-based" },
-  { name: "Burnt basque cheesecake", description: "Macerated berries, olive oil, sea salt", price: "$12", tag: "sweet finish" },
-];
-
-const testimonials = [
-  ["“The kind of place that makes an ordinary Tuesday feel like a celebration.”", "Maya R."],
-  ["“Warm, thoughtful food and the best little corner table in the city.”", "Daniel K."],
-  ["“Mini Kitchen is our happy place. Every visit feels personal.”", "Nina & Sam"],
+const openingHours = [
+  ["Monday", "10 am — 10 pm"],
+  ["Tuesday", "10 am — 10 pm"],
+  ["Wednesday", "10 am — 10 pm"],
+  ["Thursday", "10 am — 10 pm"],
+  ["Friday", "10 am — 10 pm"],
+  ["Saturday", "10 am — 10 pm"],
+  ["Sunday", "10 am — 10 pm"],
 ];
 
 export default function Home() {
   return (
     <main className="site-shell">
       <Navbar />
-       <Chatbot />
+       <div className="chatbot-float">
+          <Chatbot />
+        </div>
       <section id="home" className="hero-section bg-fixed">
         <div className="hero-overlay" />
         <div className="hero-content page-width">
@@ -34,7 +33,6 @@ export default function Home() {
             <a href="#reserve" className="button button-primary">Book a table <ArrowUpRight size={17} /></a>
             <a href="#menu" className="text-link light-link">Explore the menu <ArrowDown size={16} /></a>
           </div>
-          <div className="hero-note"><span className="pulse-dot" /> Open today <b>12pm — 10pm</b></div>
         </div>
         <div className="scroll-cue"><span /> Scroll to explore</div>
       </section>
@@ -57,6 +55,42 @@ export default function Home() {
         <MenuItemCard />
       </section>
 
+      <section id="hours" className="section-padding">
+        <div className="page-width opening-hours-layout">
+          <div className="opening-hours-intro">
+            <div className="opening-hours-kicker">
+              <span className="opening-hours-status"><span /> Open daily</span>
+              <span>14 Little Collins St</span>
+            </div>
+            <p className="eyebrow">Opening hours</p>
+            <h2>Come by<br /><em>any day.</em></h2>
+            <p className="body-copy">We&apos;re here for long lunches, easy dinners, and everything in between. Walk-ins are always welcome at the bar.</p>
+            <div className="opening-hours-note">
+              <Clock3 size={18} />
+              <span>Serving lunch &amp; dinner<br /><strong>10 am — 10 pm</strong></span>
+            </div>
+            <a href="#reserve" className="button button-dark opening-hours-button">Reserve a table <ArrowUpRight size={17} /></a>
+          </div>
+          <div className="opening-hours-card">
+            <div className="opening-hours-card-heading">
+              <div>
+                <p className="eyebrow">Every day of the week</p>
+                <h3>When to find us</h3>
+              </div>
+              <Clock3 size={22} aria-hidden="true" />
+            </div>
+            <div className="opening-hours-list" aria-label="Opening hours">
+              {openingHours.map(([day, hours]) => (
+                <div className="opening-hours-row" key={day}>
+                  <span>{day}</span>
+                  <span>{hours}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="story" className="story-section section-padding page-width">
         <div className="story-photo" aria-label="A warm restaurant interior" />
         <div className="story-copy">
@@ -71,9 +105,9 @@ export default function Home() {
         </div>
       </section>
 
-    
+      
 
-      <section id="reserve" className="relative section-padding bg-[url('/images/restaurant-bg-1.jpg')] bg-cover bg-center bg-fixed bg-no-repeat">
+      <section id="reserve" className="relative section-padding bg-[url('/images/restaurant-bg-1.jpg')] bg-cover bg-center bg-fixed bg-no-repeat mt-10">
         <div className="absolute inset-0 bg-black/60" />
         <div className="page-width reserve-layout relative z-10">
           <div className="reserve-intro">
