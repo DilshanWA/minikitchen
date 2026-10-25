@@ -1,5 +1,6 @@
 import { ArrowDown, ArrowUpRight, Camera, Clock3, MapPin, Phone, Star } from "lucide-react";
 import ReservationForm from "./components/ReservationForm";
+import Navbar from "./components/Navbar";
 
 const menuItems = [
   { name: "Charred halloumi", description: "Whipped feta, citrus, smoked honey", price: "$14", tag: "to share" },
@@ -17,6 +18,7 @@ const testimonials = [
 export default function Home() {
   return (
     <main className="site-shell">
+      <Navbar />
       <section id="home" className="hero-section">
         <div className="hero-overlay" />
         <div className="hero-content page-width">
@@ -61,7 +63,11 @@ export default function Home() {
               </article>
             ))}
           </div>
-          <div className="center-action"><a href="#reserve" className="button button-outline">See what&apos;s cooking <ArrowUpRight size={17} /></a></div>
+          <div className="center-action">
+            <a href="#reserve" className="button button-outline">See what&apos;s cooking 
+              <ArrowUpRight size={17} />
+            </a>
+          </div>
         </div>
       </section>
 
