@@ -30,6 +30,22 @@ export async function getMenuItems() {
   return data;
 }
 
+export async function getMenuForClient(){
+  const supabase = getSupabaseServerClient();
+  const { data, error } = await supabase
+    .from("menu_items")
+    .select("*")
+    .eq("is_available", true)
+    .order("category", { ascending: true })
+    .order("name", { ascending: true });
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  return data;
+}
+
 export async function getMenuItem(id: string) {
   const supabase = getSupabaseServerClient();
 
