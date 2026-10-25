@@ -2,6 +2,7 @@ import { ArrowDown, ArrowUpRight, Camera, Clock3, MapPin, Phone, Star, Mail } fr
 import ReservationForm from "./components/ReservationForm";
 import Navbar from "./components/Navbar";
 import MenuItemCard from "./components/MenuItemCard";
+import Chatbot from "./components/Chatbot";
 
 export const instant = false;
 
@@ -22,7 +23,8 @@ export default function Home() {
   return (
     <main className="site-shell">
       <Navbar />
-      <section id="home" className="hero-section">
+       <Chatbot />
+      <section id="home" className="hero-section bg-fixed">
         <div className="hero-overlay" />
         <div className="hero-content page-width">
           <p className="eyebrow hero-eyebrow"><span /> Neighbourhood dining, reimagined</p>
@@ -71,10 +73,7 @@ export default function Home() {
 
     
 
-      <section
-        id="reserve"
-        className="relative section-padding bg-[url('/images/restaurant-bg-1.jpg')] bg-cover bg-center bg-dfixed bg-no-repeat"
-      >
+      <section id="reserve" className="relative section-padding bg-[url('/images/restaurant-bg-1.jpg')] bg-cover bg-center bg-fixed bg-no-repeat">
         <div className="absolute inset-0 bg-black/60" />
         <div className="page-width reserve-layout relative z-10">
           <div className="reserve-intro">

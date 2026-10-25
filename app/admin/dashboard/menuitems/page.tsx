@@ -47,11 +47,14 @@ export default async function MenuItemsPage() {
                     <td className="px-6 py-4">
                       <div className="flex items-center gap-3">
                         {item.image_url ? (
+                          <>
                           <img
                             src={item.image_url}
                             alt=""
                             className="h-12 w-12 rounded-lg object-cover"
                           />
+                          <p className="font-bold text-gray-900">{item.name}</p>
+                          </>   
                         ) : (
                           <div className="h-12 w-12 rounded-lg bg-gray-100" />
                         )}
@@ -60,7 +63,7 @@ export default async function MenuItemsPage() {
                     <td className="px-6 py-4 text-gray-600">{item.description || "No description"}</td>
                     <td className="px-6 py-4 text-gray-600">{item.category}</td>
                     <td className="px-6 py-4 font-medium text-gray-900">
-                      ${Number(item.price).toFixed(2)}
+                      Rs:{Number(item.price).toFixed(2)}
                     </td>
                     <td className="px-6 py-4 text-gray-600">
                       {item.preparation_time

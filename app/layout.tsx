@@ -25,7 +25,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body>
         
         {children}
-        <Chatbot />
+       
       </body>
     </html>
   );
