@@ -9,20 +9,24 @@ type ChatMessage = {
 };
 
 type ReservationDraft = {
-  customerName: string;
-  contactDetails: string;
+  name: string;
+  email: string;
   reservationDate: string;
   reservationTime: string;
   guestCount: number;
+  occasion: string;
+  notes: string;
   readyToSubmit: boolean;
 };
 
 const emptyDraft: ReservationDraft = {
-  customerName: "",
-  contactDetails: "",
+  name: "",
+  email: "",
   reservationDate: "",
   reservationTime: "",
   guestCount: 0,
+  occasion: "",
+  notes: "",
   readyToSubmit: false,
 };
 
@@ -122,11 +126,13 @@ export default function Chatbot() {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          customerName: draft.customerName,
-          contactDetails: draft.contactDetails,
+          name: draft.name,
+          email: draft.email,
           reservationDate: draft.reservationDate,
           reservationTime: draft.reservationTime,
           guestCount: draft.guestCount,
+          occasion: draft.occasion,
+          notes: draft.notes,
         }),
       });
 
@@ -174,7 +180,7 @@ export default function Chatbot() {
                 src="/images/chatbot.png"
                 alt="MiniKitchen logo"
                 width={40}
-                height={32}
+                height={40}
                 className="inline-block rounded-full"
                 />
                 <div>
@@ -234,12 +240,12 @@ export default function Chatbot() {
               <dl className="space-y-1 text-sm text-gray-700">
                 <div>
                   <dt className="inline font-medium">Name: </dt>
-                  <dd className="inline">{draft.customerName}</dd>
+                  <dd className="inline">{draft.name}</dd>
                 </div>
 
                 <div>
-                  <dt className="inline font-medium">Contact: </dt>
-                  <dd className="inline">{draft.contactDetails}</dd>
+                  <dt className="inline font-medium">Email: </dt>
+                  <dd className="inline">{draft.email}</dd>
                 </div>
 
                 <div>
@@ -256,6 +262,20 @@ export default function Chatbot() {
                   <dt className="inline font-medium">Guests: </dt>
                   <dd className="inline">{draft.guestCount}</dd>
                 </div>
+
+                {draft.occasion && (
+                  <div>
+                    <dt className="inline font-medium">Occasion: </dt>
+                    <dd className="inline">{draft.occasion}</dd>
+                  </div>
+                )}
+
+                {draft.notes && (
+                  <div>
+                    <dt className="inline font-medium">Notes: </dt>
+                    <dd className="inline">{draft.notes}</dd>
+                  </div>
+                )}
               </dl>
 
               <p className="mt-2 text-xs text-amber-700">
@@ -326,7 +346,7 @@ export default function Chatbot() {
                 src="/images/chatbot.png"
                 alt="MiniKitchen logo"
                 width={60}
-                height={40}
+                height={60}
                 className="inline-block rounded-full"
                 />
         }

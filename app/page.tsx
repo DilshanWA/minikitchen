@@ -1,4 +1,4 @@
-import { ArrowDown, ArrowUpRight, Camera, Clock3, MapPin, Phone, Star } from "lucide-react";
+import { ArrowDown, ArrowUpRight, Camera, Clock3, MapPin, Phone, Star, Mail } from "lucide-react";
 import ReservationForm from "./components/ReservationForm";
 import Navbar from "./components/Navbar";
 import MenuItemCard from "./components/MenuItemCard";
@@ -51,7 +51,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="menu" className="menu-section section-padding">
+      <section id="menu" className="menu-section section-padding bg-black">
         <MenuItemCard />
       </section>
 
@@ -69,13 +69,33 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="quote-section section-padding">
-        <div className="page-width"><p className="eyebrow">Kind words</p><div className="quote-grid">{testimonials.map(([quote, name]) => <blockquote key={name}><div className="stars">{[1, 2, 3, 4, 5].map((star) => <Star key={star} size={14} fill="currentColor" />)}</div><p>{quote}</p><cite>{name}</cite></blockquote>)}</div></div>
-      </section>
+    
 
-      <section id="reserve" className="reserve-section section-padding">
-        <div className="page-width reserve-layout">
-          <div className="reserve-intro"><p className="eyebrow">Pull up a chair</p><h2>Let&apos;s make<br /><em>it a date.</em></h2><p className="body-copy">Tell us when you&apos;d like to join us and we&apos;ll take care of the rest. For groups of 8 or more, please give us a call.</p><a href="tel:+61391234567" className="phone-link"><Phone size={17} /> +61 3 9123 4567</a></div>
+      <section
+        id="reserve"
+        className="relative section-padding bg-[url('/images/restaurant-bg-1.jpg')] bg-cover bg-center bg-dfixed bg-no-repeat"
+      >
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="page-width reserve-layout relative z-10">
+          <div className="reserve-intro">
+            <p className="eyebrow">Pull up a chair</p>
+            <h2>
+              <span className="text-white">Let&apos;s make<br /></span>
+              <em>it a date.</em>
+            </h2>
+            <p className="text-gray-300 text-sm">
+              Tell us when you&apos;d like to join us and we&apos;ll take care of the rest.
+              For groups of 8 or more, please give us a call.
+            </p>
+            <div className="flex flex-col gap-2 text-sm text-gray-300 mt-6">
+              <div className="flex items-center gap-2">
+                <Phone size={17} color="#D96F3C"/> <span className="text-white">+61 3 9123 4567</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <Mail size={17} color="#D96F3C" /> <span className="text-white">hello@example.com</span>
+              </div>
+            </div>
+          </div>
           <ReservationForm />
         </div>
       </section>

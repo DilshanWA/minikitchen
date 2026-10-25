@@ -90,7 +90,6 @@ export default function ReservationForm() {
         type="submit" 
         disabled={isPending}>{isPending ? "Saving your table..." : <>Request a reservation <ArrowUpRight size={17} /></>}
       </button>
-      <p className="mt-[13px] text-center text-[10px] text-[#8b928b]">We&apos;ll confirm your reservation by email within a few minutes.</p>
     </form>
   );
 }

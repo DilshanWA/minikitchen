@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
-import { createClient } from "@supabase/supabase-js";
-import { ReservationSchema } from '@/schemas/reservation'
-
+import { ReservationSchema } from "@/schemas/reservation";
+import { getSupabaseServerClient } from "@/lib/supabase";
 
 
 function isRealDate(value: string) {
@@ -53,19 +52,29 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const supabase = createClient(
-      process.env.NEXT_PUBLIC_SUPABASE_URL!,
-      process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY!,
-    );
+    let supabase;
+
+    try {
+      supabase = getSupabaseServerClient();
+    } catch (error) {
+      console.error("Reservation server credentials are missing:", error);
+
+      return NextResponse.json(
+        { error: "Reservations are not configured on the server." },
+        { status: 503 },
+      );
+    }
 
     const { data, error } = await supabase
       .from("reservations")
       .insert({
-        customer_name: reservation.customerName,
-        contact_details: reservation.contactDetails,
+        name: reservation.name,
+        email: reservation.email,
         reservation_date: reservation.reservationDate,
         reservation_time: reservation.reservationTime,
-        guest_count: reservation.guestCount,
+        guests: reservation.guestCount,
+        occasion: reservation.occasion || null,
+        notes: reservation.notes || null,
         status: "pending",
       })
       .select("id, status")
@@ -75,7 +84,7 @@ export async function POST(request: NextRequest) {
       console.error("Reservation insert failed:", error.message);
 
       return NextResponse.json(
-        { error: "Unable to save your reservation. Please try again." },
+        { error: `Unable to save your reservation: ${error.message}` },
         { status: 500 },
       );
     }

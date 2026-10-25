@@ -131,7 +131,7 @@ export async function createMenuItem(formData: FormData) {
     uploadedImagePath = `${randomUUID()}.${extension}`;
 
     const { error: uploadError } = await supabase.storage
-      .from("menu-images")
+      .from("menu_images")
       .upload(uploadedImagePath, image, {
         contentType: image.type,
         upsert: false,
@@ -143,7 +143,7 @@ export async function createMenuItem(formData: FormData) {
     }
 
     const { data: publicUrlData } = supabase.storage
-      .from("menu-images")
+      .from("menu_images")
       .getPublicUrl(uploadedImagePath);
 
     image_url = publicUrlData.publicUrl;

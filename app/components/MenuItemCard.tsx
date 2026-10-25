@@ -20,7 +20,11 @@ export default async function MenuItemCard() {
                     <img src={item.image_url} alt={item.name} />
                   )}
                 </div>
-                <div className="dish-info"><div><h3>{item.name}</h3><p>{item.description}</p></div><strong>{item.price}</strong></div>
+                <div className="dish-info">
+                  <div>
+                    <h3>{item.name}</h3>
+                    <p>{item.description}</p>
+                    </div><strong>{item.price}</strong></div>
                 <span className="dish-tag">{item.tag}</span>
               </article>
             ))}
