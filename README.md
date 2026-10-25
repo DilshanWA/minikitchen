@@ -177,6 +177,7 @@ npm run build
 
 Admin pages other than login and signup require a valid `auth_token` session cookie. Unauthenticated users are redirected to `/admin/login`.
 
+
 ## How the AI assistant works
 
 The floating assistant sends the latest conversation messages to `/api/chat`. The server:

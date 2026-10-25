@@ -28,7 +28,6 @@ export default function LoginPage() {
 
           <div className="mt-2 flex items-center justify-between">
             <label htmlFor="login-password" className="text-[11px] font-bold text-[#424d45]">Password</label>
-            <Link href="/admin/forgot-password" className="text-[10px] text-[#d96e3d] hover:underline">Forgot password?</Link>
           </div>
           <div className="flex min-h-11 items-center gap-2.5 border border-[#dfe3dd] px-3 transition focus-within:border-[#a6b8a0] focus-within:ring-4 focus-within:ring-[#a6b8a0]/15">
             <LockKeyhole size={17} className="shrink-0 text-[#929c93]" aria-hidden="true" />

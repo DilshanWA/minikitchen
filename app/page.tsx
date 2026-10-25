@@ -23,18 +23,16 @@ export default function Home() {
        <div className="chatbot-float">
           <Chatbot />
         </div>
-      <section id="home" className="hero-section bg-fixed">
-        <div className="hero-overlay" />
+      <section id="home" className="bg-[url(/images/hero-bg-13.jpg)] min-h-[720px] bg-cover items-center justify-center bg-center relative flex bg-fixed">
         <div className="hero-content page-width">
           <p className="eyebrow hero-eyebrow"><span /> Neighbourhood dining, reimagined</p>
-          <h1>Small kitchen.<br /><em>Big feeling.</em></h1>
+          <h1 className="text-white">Small kitchen.<br /><em>Big feeling.</em></h1>
           <p className="hero-copy">A tiny, joyful restaurant where seasonal ingredients, good music and long lunches come together.</p>
           <div className="hero-actions">
             <a href="#reserve" className="button button-primary">Book a table <ArrowUpRight size={17} /></a>
             <a href="#menu" className="text-link light-link">Explore the menu <ArrowDown size={16} /></a>
           </div>
         </div>
-        <div className="scroll-cue"><span /> Scroll to explore</div>
       </section>
 
       <section className="intro-section page-width section-padding">

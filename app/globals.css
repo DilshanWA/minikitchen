@@ -16,7 +16,7 @@ button, input, select, textarea { font: inherit; }
 .nav-links a:not(.nav-book) { opacity: .86; transition: opacity .2s; }.nav-links a:hover { opacity: 1; }
 .nav-book { border: 1px solid rgba(255,255,255,.6); padding: 13px 18px; border-radius: 2px; }.nav-book span { margin-left: 10px; color: #f3aa7e; }
 .menu-toggle { display: none; background: none; border: 0; color: white; padding: 6px; }
-.hero-section { min-height: 720px; color: white; background: url("/images/hero-bg.jpg") center/cover; position: relative; display: flex; align-items: center; }
+.hero-section { min-height: 720px; color: white; background: url("/images/hero-bg-12.png") center/cover; position: relative; display: flex; align-items: center; }
 .hero-overlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(17,28,21,.76), rgba(18,25,20,.15)); }
 .hero-content { position: relative; padding-top: 72px; }.eyebrow { font-size: 10px; letter-spacing: 2.4px; text-transform: uppercase; font-weight: 700; color: var(--orange); margin: 0 0 24px; }.hero-eyebrow { color: #d5e1cf; display: flex; align-items: center; gap: 9px; }.hero-eyebrow span { width: 25px; height: 1px; background: #d5e1cf; }
 h1, h2, h3, p { margin-top: 0; } h1, h2 { font-family: Georgia, serif; font-weight: 400; letter-spacing: -2px; } h1 { font-size: clamp(56px, 8vw, 104px); line-height: .93; margin: 0 0 28px; } h2 { font-size: clamp(44px, 5.2vw, 70px); line-height: .96; margin-bottom: 28px; } h1 em, h2 em { font-style: italic; color: var(--orange); }

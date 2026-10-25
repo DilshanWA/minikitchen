@@ -48,7 +48,7 @@ export default async function ReservationsPage() {
         Total reservations: {reservations.length}
       </p>
 
-      <div className="overflow-x-auto rounded-lg border">
+      <div className="overflow-x-auto rounded-lg shadow-sm">
         <table className="w-full text-left text-sm">
           <thead className="bg-gray-100">
             <tr>
