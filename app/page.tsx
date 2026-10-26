@@ -154,7 +154,7 @@ export default function Home() {
             <a href="https://instagram.com" aria-label="Instagram"><Camera size={18} /></a>
           </div>
           <div className="footer-meta">
-            <span>14 Little Collins St, Melbourne</span>
+            <span>No 8 Colombo</span>
             <span>© 2025 Mini Kitchen</span>
           </div>
         </div>
