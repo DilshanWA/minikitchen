@@ -102,9 +102,7 @@ export default function Home() {
           <a href="#reserve" className="text-link dark-link">Find your table <ArrowUpRight size={16} /></a>
         </div>
       </section>
-
       
-
       <section id="reserve" className="relative section-padding bg-[url('/images/restaurant-bg-1.jpg')] bg-cover bg-center bg-fixed bg-no-repeat mt-10">
         <div className="absolute inset-0 bg-black/60" />
         <div className="page-width reserve-layout relative z-10">
